@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="/style.css"/> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+</head>
+<body>
+    <button id="darkModeToggle" class="toggle-button"><i class="fas fa-moon"></i></button> 
+    <h1>Quora Posts</h1>
+    <% for (post of posts) { %>
+        <div class="post">
+            <h3 class="user">@<%= post.username %></h3>
+            <h4 class="content"><%= post.content %></h4>
+            <div class="button-container"> 
+                <a href="http://localhost:8000/posts/<%= post.id %>"><button class="btno">View</button></a>
+                <a href="http://localhost:8000/posts/<%= post.id %>/edit"><button class="btno">Edit</button></a>
+                <form action="/posts/<%= post.id %>?_method=DELETE" method="POST" style="display:inline;">
+                    <button class="btno delete-button">Delete</button>
+                </form>
+            </div>
+        </div>
+    <% } %>
+
+    <a href="http://localhost:8000/posts/new"><button class="btno">Create New Post</button></a>
+
+    <script>
+        const toggleButton = document.getElementById('darkModeToggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            localStorage.setItem('dark-mode', isDarkMode);
+        });
+
+        // Check local storage for dark mode preference
+        if (localStorage.getItem('dark-mode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+
+</html>

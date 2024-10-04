@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Post</title>
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+</head>
+<body>
+
+    <button id="darkModeToggle" class="toggle-button"><i class="fas fa-moon"></i></button> 
+    <h2>Create a New Post</h2>
+    <form method="post" action="/posts" class="post">
+        <input type="text" placeholder="Enter username" name="username" id="username" class="form-input" required>
+        <textarea name="content" placeholder="Write your post" id="content" class="form-input" required></textarea>
+        <button class="btn">Submit Post</button>
+    </form>
+
+    <script>
+        // Dark mode toggle script
+        const toggleButton = document.getElementById('darkModeToggle');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            localStorage.setItem('dark-mode', isDarkMode);
+        });
+
+        // Check local storage for dark mode preference
+        if (localStorage.getItem('dark-mode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>

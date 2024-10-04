@@ -1,0 +1,221 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f8fa; /* Light mode background */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Transition for background color */
+}
+
+body.dark-mode {
+    background-color: #1f1f1f; /* Dark mode background */
+    color: white; /* Dark mode text color */
+}
+
+h1, h2, h3, h4 {
+    color: #1da1f2;
+    transition: color 0.3s ease; /* Transition for text color */
+}
+
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4 {
+    color: #fff; /* Light text for dark mode */
+}
+
+/* Styling the individual posts */
+.post {
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .post {
+    background-color: #2c2c2c; /* Dark mode post background */
+}
+
+/* User styling */
+.user {
+    color: #1da1f2;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+body.dark-mode .user {
+    color: #a0d8ef; /* Light user color in dark mode */
+}
+
+/* Content styling */
+.content {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #14171a;
+}
+
+body.dark-mode .content {
+    color: #dcdcdc; /* Light content color in dark mode */
+}
+
+/* Button styling */
+.button-container {
+    margin-top: 10px; /* Space above the buttons */
+    display: flex; /* Use flexbox for horizontal alignment */
+}
+
+.button-container a, 
+.button-container form {
+    margin-right: 10px; /* Space between buttons */
+}
+
+.btn {
+    background-color: #1da1f2; /* Default button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px; /* Padding */
+    font-size: 0.9rem; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.btn:hover {
+    background-color: #0d8dd8; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Specific button styles */
+.view-button {
+    background-color: #28a745;
+}
+
+.view-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.edit-button {
+    background-color: #ffc107; /* Yellow for edit button */
+}
+
+.edit-button:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+}
+
+.delete-button {
+    background-color: #dc3545; /* Red for delete button */
+}
+
+.delete-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+/* Dark mode button */
+.toggle-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #1da1f2;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.toggle-button:hover {
+    background-color: #0d8dd8;
+}
+
+body.dark-mode .toggle-button {
+    background-color: #444; /* Dark mode button color */
+}
+
+/* Half-moon icon styling */
+.toggle-icon {
+    font-size: 24px; /* Size of the icon */
+}
+
+
+
+/* Button styling for .btno class */
+.btno {
+    background-color: #1da1f2; /* Default button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 25px; /* Rounded corners for a softer look */
+    padding: 12px 25px; /* Padding for height and width */
+    font-size: 1rem; /* Font size */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    display: inline-block; /* To respect margins */
+    margin: 5px; /* Margin between buttons */
+}
+
+/* Specific styling for Delete button */
+.delete-button {
+    background-color: #dc3545; /* Red for delete button */
+}
+
+.delete-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.btno:hover {
+    background-color: #0d8dd8; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Active state for better feedback */
+.btno:active {
+    transform: scale(0.95); /* Slightly shrink when clicked */
+}
+
+/* For disabled state */
+.btno:disabled {
+    background-color: #b0b0b0; /* Grey for disabled button */
+    cursor: not-allowed; /* Not allowed cursor */
+    box-shadow: none; /* No shadow for disabled */
+}
+
+/* Styling for the button container */
+.button-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-start; /* Align items to the left */
+    margin-top: 10px; /* Space above the buttons */
+}
+/* new.ejs*/
+.form-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #1da1f2;
+    outline: none;
+}
+
+body.dark-mode .form-input {
+    background-color: #444;
+    color: #fff;
+    border-color: #666;
+}
